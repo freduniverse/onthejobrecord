@@ -1,0 +1,61 @@
+﻿# Host: localhost  (Version 5.5.5-10.4.32-MariaDB)
+# Date: 2024-10-16 17:13:22
+# Generator: MySQL-Front 6.0  (Build 2.20)
+
+
+#
+# Structure for table "account"
+#
+
+DROP TABLE IF EXISTS `account`;
+CREATE TABLE `account` (
+  `Id` tinyint(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(100) NOT NULL DEFAULT '',
+  `password` varchar(100) NOT NULL,
+  `firstName` varchar(150) DEFAULT NULL,
+  `lastName` varchar(150) DEFAULT NULL,
+  `status` varchar(255) DEFAULT 'Inactive',
+  `role` varchar(20) DEFAULT NULL,
+  `dateAdded` date DEFAULT NULL,
+  `birthday` date DEFAULT NULL,
+  `sex` varchar(255) DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `totalPurchase` double DEFAULT 0,
+  `address` text DEFAULT NULL,
+  `isDeleted` int(11) DEFAULT 0,
+  `city` text DEFAULT NULL,
+  `zipCode` text DEFAULT NULL,
+  `company` varchar(255) DEFAULT NULL,
+  `course` varchar(255) DEFAULT NULL,
+  `headId` int(11) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPRESSED;
+
+#
+# Structure for table "announcement"
+#
+
+DROP TABLE IF EXISTS `announcement`;
+CREATE TABLE `announcement` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `dateAdded` date DEFAULT NULL,
+  `content` text DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+#
+# Structure for table "dtr"
+#
+
+DROP TABLE IF EXISTS `dtr`;
+CREATE TABLE `dtr` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `studentId` int(11) DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `timeStart` time DEFAULT NULL,
+  `task` text DEFAULT NULL,
+  `timeEnd` time DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
